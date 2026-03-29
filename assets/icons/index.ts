@@ -1,0 +1,15 @@
+export { default as MoneyBagIcon } from './money-bag';
+export { default as HomeIcon } from './home';
+export { default as BagIcon } from './bag';
+export { default as Bag2Icon } from './bag2';
+export { default as ProfileIcon } from './profile';
+export { default as AdjustmentsHorizontalIcon } from './adjustments-horizontal';
+export { default as InfoIcon } from './info';
+export { default as TimerIcon } from './timer';
+export { default as SearchIcon } from './search';
+export { default as CheckIcon } from './check';
+export { default as ShippingIcon } from './shipping';
+export { default as XIcon } from './x-icon';
+export { default as Check2Icon } from './check2';
+export { default as Check3Icon } from './check3';
+export { default as UploadIcon } from './upload';

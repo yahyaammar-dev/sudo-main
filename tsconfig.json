@@ -1,0 +1,28 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "assets": ["./assets"],
+      "components": ["./components"],
+      "screens": ["./screens"],
+      "types": ["./types"],
+      "routers": ["./routers"],
+      "store": ["./store"],
+      "constants": ["./constants"],
+      "hooks": ["./hooks"],
+      "tamagui": ["./node_modules/tamagui"],
+      "emitDecoratorMetadata": ["true"],
+      "experimentalDecorators": ["true"],
+      "allowJs": ["true"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/screens/Product/categories.tsx ",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}

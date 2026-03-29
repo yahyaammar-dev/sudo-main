@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412524354655",
+    "project_id": "sodu-b2b-wholesale",
+    "storage_bucket": "sodu-b2b-wholesale.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412524354655:android:9d7de6c8ccd9e3aa364fea",
+        "android_client_info": {
+          "package_name": "com.gosodu1.sodu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpcpaQOP-ADza_kEyOXh53BORkR2T38TM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

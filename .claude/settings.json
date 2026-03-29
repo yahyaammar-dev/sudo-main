@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/apple/projects/sodu-main -maxdepth 3 -type f \\\\\\(-name .gitlab-ci.yml -o -name *.yml -o -name *.yaml \\\\\\))",
+      "Bash(grep -r \"http\\\\|api\\\\|server\\\\|backend\\\\|service\\\\|url\" /Users/apple/projects/sodu-main/src --include=*.ts --include=*.tsx --include=*.js)",
+      "Bash(find /Users/apple/projects/sodu-main -name swell* -o -name *swell*)",
+      "Bash(find /Users/apple/projects/sodu-main -type f \\\\\\(-name jest.config.* -o -name vitest.config.* -o -name *.test.* -o -name *.spec.* \\\\\\))",
+      "Read(//Users/apple/projects/**)",
+      "Bash(bun --version)",
+      "Bash(npx expo:*)",
+      "Bash(curl -fsSL https://bun.sh/install)",
+      "Bash(bash)",
+      "Bash(export PATH=\"$HOME/.bun/bin:$PATH\")",
+      "Bash(bun install:*)",
+      "Bash(bun run:*)",
+      "Bash(xcrun simctl:*)",
+      "Bash(curl -s -X GET \"https://api.swell.store/products?where[name]=Platform Fee\" -u \"sodu:sk_7VQ4cfo5OJYzu9zwGAcSZPecRdVp7JbL\" -H \"Content-Type: application/json\")",
+      "Bash(curl -s -X GET \"https://api.swell.store/products?where%5Bname%5D=Platform%20Fee\" -u \"sodu:sk_7VQ4cfo5OJYzu9zwGAcSZPecRdVp7JbL\" -H \"Content-Type: application/json\")",
+      "Bash(curl -s -X POST \"https://api.swell.store/products\" -u \"sodu:sk_7VQ4cfo5OJYzu9zwGAcSZPecRdVp7JbL\" -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(curl -s -X GET \"https://api.swell.store/carts/69bba18b75ec8f001240543e\" -u \"sodu:sk_7VQ4cfo5OJYzu9zwGAcSZPecRdVp7JbL\" -H \"Content-Type: application/json\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s -X GET https://api.swell.store/carts/69bba18b75ec8f001240543e -u sodu:sk_7VQ4cfo5OJYzu9zwGAcSZPecRdVp7JbL -H 'Content-Type: application/json')",
+      "Bash(node migrate-passwords.js)"
+    ]
+  }
+}
