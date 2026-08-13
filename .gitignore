@@ -12,6 +12,8 @@ credentials.json
 web-build/
 @yahyaammar__sodu-b2b-wholesale-commerce-keystore-backup/
 google-services.json.old-com.gosodu1.sodu.bak
+sodu-b2b-wholesale-firebase-adminsdk-fbsvc-3bda7d0490.json
+*firebase-adminsdk*.json
 # expo router
 expo-env.d.ts
 # tamagui
