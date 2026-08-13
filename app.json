@@ -38,7 +38,7 @@
           "android": {
             "minSdkVersion": 25,
             "compileSdkVersion": 36,
-            "targetSdkVersion": 35
+            "targetSdkVersion": 36
           }
         }
       ],
@@ -56,7 +56,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.gosodu1.sodu",
       "jsEngine": "jsc",
-      "buildNumber": "23",
+      "buildNumber": "24",
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera for profile pictures.",
         "NSLocationWhenInUseUsageDescription": "This app uses your location for delivery tracking.",
@@ -64,15 +64,15 @@
         "ITSAppUsesNonExemptEncryption": false
       },
       "entitlements": {
-        "aps-environment": "development"
+        "aps-environment": "production"
       }
     },
     "android": {
       "edgeToEdgeEnabled": true,
-      "package": "com.gosodu1.sodu",
+      "package": "com.gosodu1.sodu2",
       "googleServicesFile": "./google-services.json",
       "jsEngine": "hermes",
-      "versionCode": 57,
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0C373C"

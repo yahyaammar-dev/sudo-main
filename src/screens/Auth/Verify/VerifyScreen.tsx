@@ -38,11 +38,14 @@ function VerifyScreen() {
       if (data.success) {
         setAccount(data.user);
         login(userInfo, data.token);
-        if (from === 'signup') {
-          router.replace(Routes.ThankYou);
-        } else {
-          router.replace(Routes.Home);
-        }
+        inputRef.current?.blur();
+        requestAnimationFrame(() => {
+          if (from === 'signup') {
+            router.replace(Routes.ThankYou);
+          } else {
+            router.replace(Routes.Home);
+          }
+        });
       } else {
         setError(translations.wrongOtp);
       }

@@ -11,10 +11,11 @@ import {
   ProductSpecifications,
 } from 'components/ui';
 import { useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { withTimeout } from 'helpers';
 import { useProductDetails, useTranslation } from 'hooks';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { StyleSheet, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
+import { StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Routes } from 'routers';
 import { Button, Dialog, Text, View, XStack, YStack } from 'tamagui';
@@ -132,7 +133,7 @@ function ProductDetails() {
   if (isLoading) {
     return (
       <ThemedSafeAreaView edges={['top']} style={styles.container}>
-        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <StatusBar style="dark" />
         <YStack flex={1} backgroundColor="#fff">
           <XStack alignItems="center" py={16} px={16} backgroundColor="#fff">
             <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
@@ -154,7 +155,7 @@ function ProductDetails() {
   if (!product && !isLoading) {
     return (
       <ThemedSafeAreaView edges={['top']} style={styles.container}>
-        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <StatusBar style="dark" />
         <YStack flex={1} backgroundColor="#fff" justifyContent="center" alignItems="center">
           <YStack alignItems="center" gap={16} px={32}>
             <Feather name="alert-circle" size={48} color="#ff6b6b" />
@@ -183,6 +184,7 @@ function ProductDetails() {
 
   return (
     <ThemedSafeAreaView edges={['top']} style={styles.container}>
+      <StatusBar style="dark" />
       <YStack flex={1} backgroundColor="#fff">
         <Dialog open={isDialogOpen} modal>
           <Dialog.Portal>

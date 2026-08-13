@@ -3,11 +3,13 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import Splash from 'components/splash';
 import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { useNotifications } from 'hooks';
 import { QueryProvider } from 'lib';
 import { useEffect, useState } from 'react';
 import SplashScreen from 'react-native-bootsplash';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 import { TamaguiProvider } from 'tamagui';
 
@@ -37,14 +39,17 @@ export default function Layout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <QueryProvider>
-        <TamaguiProvider config={config} defaultTheme="light">
-          <BottomSheetModalProvider>
-            <Slot />
-            <Toast config={toastConfig} />
-          </BottomSheetModalProvider>
-        </TamaguiProvider>
-      </QueryProvider>
+      <SafeAreaProvider>
+        <QueryProvider>
+          <TamaguiProvider config={config} defaultTheme="light">
+            <BottomSheetModalProvider>
+              <StatusBar style="dark" />
+              <Slot />
+              <Toast config={toastConfig} />
+            </BottomSheetModalProvider>
+          </TamaguiProvider>
+        </QueryProvider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }

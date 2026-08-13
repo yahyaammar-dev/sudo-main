@@ -1,8 +1,15 @@
 import { Image } from 'expo-image';
 import { useState, useRef, useCallback, useMemo } from 'react';
-import { Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+import {
+  Dimensions,
+  ScrollView,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+  TouchableOpacity,
+} from 'react-native';
 import { View } from 'tamagui';
 
+import ImageViewerModal from './ImageViewerModal';
 import { styles } from './styles';
 
 const { width } = Dimensions.get('window');
@@ -14,7 +21,8 @@ type ProductImageCarouselProps = {
 
 const ProductImageCarousel = ({ images, loop = false }: ProductImageCarouselProps) => {
   const scrollViewRef = useRef<ScrollView>(null);
-  const [, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isViewerVisible, setIsViewerVisible] = useState(false);
 
   // For infinite loop, we duplicate images: [last, ...original, first]
   const displayImages = useMemo(() => {
@@ -84,6 +92,14 @@ const ProductImageCarousel = ({ images, loop = false }: ProductImageCarouselProp
     }
   }, [loop, images.length]);
 
+  const openViewer = useCallback(() => {
+    setIsViewerVisible(true);
+  }, []);
+
+  const closeViewer = useCallback(() => {
+    setIsViewerVisible(false);
+  }, []);
+
   if (!images || images.length === 0) {
     return null;
   }
@@ -105,11 +121,22 @@ const ProductImageCarousel = ({ images, loop = false }: ProductImageCarouselProp
         scrollEnabled={images.length > 1}
         style={styles.scrollView}>
         {displayImages.map((imageUrl, index) => (
-          <View key={`${imageUrl}-${index}`} style={styles.carouselItem}>
+          <TouchableOpacity
+            key={`${imageUrl}-${index}`}
+            activeOpacity={0.9}
+            onPress={openViewer}
+            style={styles.carouselItem}>
             <Image source={{ uri: imageUrl }} style={styles.productImage} contentFit="contain" />
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
+
+      <ImageViewerModal
+        images={images}
+        visible={isViewerVisible}
+        initialIndex={currentIndex}
+        onClose={closeViewer}
+      />
     </View>
   );
 };

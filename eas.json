@@ -7,12 +7,14 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
+      "environment": "development",
       "env": {
         "EAS_ENV": "development"
       }
     },
     "preview": {
       "distribution": "internal",
+      "environment": "preview",
       "env": {
         "EAS_ENV": "preview"
       }
@@ -22,6 +24,7 @@
       "android": {
         "buildType": "apk"
       },
+      "environment": "production",
       "env": {
         "EAS_ENV": "production"
       }
@@ -31,6 +34,7 @@
       "android": {
         "buildType": "apk"
       },
+      "environment": "production",
       "env": {
         "EAS_ENV": "production"
       }
@@ -38,8 +42,10 @@
     "aab": {
       "autoIncrement": true,
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "app-bundle",
+        "credentialsSource": "local"
       },
+      "environment": "production",
       "env": {
         "EAS_ENV": "production"
       }

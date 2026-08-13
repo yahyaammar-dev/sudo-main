@@ -5,7 +5,7 @@ import { downloadAndShareFile } from 'helpers';
 import { useTranslation } from 'hooks';
 import { ArrowLeft2 } from 'iconsax-react-nativejs';
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { XStack, YStack, Text, Button } from 'tamagui';
 
 function OrderDocumentsScreen() {
@@ -24,7 +24,7 @@ function OrderDocumentsScreen() {
 
   return (
     <YStack flex={1} backgroundColor="white">
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
       <SafeAreaView style={{ flex: 1 }}>
         <XStack paddingVertical={16} paddingHorizontal={16} alignItems="center">
           <Button

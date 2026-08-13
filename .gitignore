@@ -3,12 +3,15 @@ node_modules/
 dist/
 npm-debug.*
 *.jks
+credentials.json
 *.p8
 *.p12
 *.key
 *.mobileprovision
 *.orig.*
 web-build/
+@yahyaammar__sodu-b2b-wholesale-commerce-keystore-backup/
+google-services.json.old-com.gosodu1.sodu.bak
 # expo router
 expo-env.d.ts
 # tamagui
