@@ -83,6 +83,15 @@ export function useGetSession(options?: UseQueryOptions<Record<string, unknown>,
 //   };
 // }
 
+export function useDeleteAccount(
+  options?: UseMutationOptions<{ success: boolean; message: string }, AxiosError, string>
+) {
+  return useMutation<{ success: boolean; message: string }, AxiosError, string>({
+    mutationFn: (accountId: string) => accountApi.deleteAccount(accountId),
+    ...options,
+  });
+}
+
 export function useGetSessionCookie(): string | undefined {
   return swell.session.getCookie();
 }

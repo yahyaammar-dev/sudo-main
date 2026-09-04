@@ -1,6 +1,6 @@
 import { use$ } from '@legendapp/state/react';
 import { useQueryClient } from '@tanstack/react-query';
-import { useLogout } from 'api/account';
+import { useDeleteAccount, useLogout } from 'api/account';
 import { clearCookies } from 'api/swell/client';
 import { MenuItem } from 'components';
 import { openURL } from 'expo-linking';
@@ -27,6 +27,7 @@ function AccountScreen() {
   const insets = useSafeAreaInsets();
   const { account, logout } = use$(userStore);
   const { mutate: swellLogout } = useLogout();
+  const { mutate: deleteAccount, isPending: isDeletingAccount } = useDeleteAccount();
   const queryClient = useQueryClient();
 
   const handleLogout = () => {
@@ -35,6 +36,25 @@ function AccountScreen() {
     queryClient.clear();
     logout();
     router.replace(Routes.Login);
+  };
+
+  const handleDeleteAccount = () => {
+    if (!account?.id || isDeletingAccount) return;
+
+    deleteAccount(account.id, {
+      onSuccess: () => {
+        clearCookies();
+        queryClient.clear();
+        logout();
+        router.replace(Routes.Login);
+      },
+      onError: () => {
+        Alert.alert(
+          translations.deleteAccount,
+          'Failed to delete your account. Please try again or contact support.'
+        );
+      },
+    });
   };
 
   const menuItems = [
@@ -92,9 +112,7 @@ function AccountScreen() {
             {
               text: translations.delete,
               style: 'destructive',
-              onPress: () => {
-                // TODO: Implement account deletion logic here
-              },
+              onPress: handleDeleteAccount,
             },
           ]
         );
