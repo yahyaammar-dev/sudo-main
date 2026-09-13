@@ -52,6 +52,7 @@ function LoginScreen() {
   });
   const { handleSubmit: onSubmit, status } = useLoginScreen({
     phoneNumber,
+    countryCode: country?.cca2,
   });
 
   const handleGoBack = () => {
